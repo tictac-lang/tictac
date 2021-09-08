@@ -1,0 +1,4 @@
+(main) -> {}:int|{
+    =msg <- "test";
+    (io_put) -> {=msg}
+}
