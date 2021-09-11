@@ -23,7 +23,7 @@ Function definition:
 }
 ```
 
-(eg.):
+(ex.):
 
 ```rust
 (main) -> {}:int|{
