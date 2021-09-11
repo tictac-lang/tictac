@@ -1,7 +1,7 @@
-use crate::token::Token;
 use std::mem::discriminant;
 use crate::debug;
 
+/*
 pub fn rules(list: Vec<Token>) -> Vec<Token> {
     let mut k: usize = 0;
     let mut patched_list: Vec<Token> = Vec::new();
@@ -15,7 +15,7 @@ pub fn rules(list: Vec<Token>) -> Vec<Token> {
                 debug!("Found Arer that would be fatal, skipping, the thing {:#?}", i);
                 continue;
             }
-        } else {
+        } else { 
             debug!("Found unsubtractable, continuing");
         }
         let arer_arrow = String::from(">");
@@ -34,3 +34,4 @@ pub fn rules(list: Vec<Token>) -> Vec<Token> {
     }
     return patched_list;
 }
+*/

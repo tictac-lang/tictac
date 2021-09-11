@@ -20,3 +20,8 @@ Function Definition:
 }
 ```
 Function running: ``(function_name) -> {function arguments}`` (eg.): ``(eprint) -> {"Hello"}``
+
+#### Errors
+NoSemicolon: Has no semicolon
+UnknownChar: Found a character that the lexer doesn't know
+EndBracseAdvance: Either placed and unmatcher brace, corrupted memory or error in my dumb code

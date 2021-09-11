@@ -1,0 +1,22 @@
+[
+    [
+        SomethingFunction(
+            "test",
+        ),
+        Whitespace,
+        Arer(
+            "->",
+        ),
+        Whitespace,
+        Braces(
+            [
+                String(
+                    "afet",
+                ),
+                Int(
+                    "123",
+                ),
+            ],
+        ),
+    ],
+]

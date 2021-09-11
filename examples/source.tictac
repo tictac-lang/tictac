@@ -1,4 +1,8 @@
+exports this "random";
+
 (main) -> {}:int|{
-    =msg <- "test";
-    (io_put) -> {=msg}
+    =one <- 0;
+    =two <- 10;
+    (io_put) -> {=(random.random) -> {=one, =two}};
+    return 0;
 }
