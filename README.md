@@ -8,10 +8,10 @@ It has two modes, compiler and evaluator. The compiler one compiles to assembly 
 
 ## Contributors
 
-Who|Role
----|---
-![Exeon's image](https://avatars.githubusercontent.com/u/46092609?s=70&v=4&size=64)<br>@actuallyexeon | Creator
-![Kat's image](https://avatars.githubusercontent.com/u/49850194?s=70&v=4&size=64)<br>@datkat21 | Helped with the logo, docs, and readme
+| Who                                                                                                   | Role                                   |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| ![Exeon's image](https://avatars.githubusercontent.com/u/46092609?s=70&v=4&size=64)<br>@actuallyexeon | Creator                                |
+| ![Kat's image](https://avatars.githubusercontent.com/u/49850194?s=70&v=4&size=64)<br>@datkat21        | Helped with the logo, docs, and readme |
 
 ## Syntax
 
