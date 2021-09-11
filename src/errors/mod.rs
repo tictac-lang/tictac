@@ -5,7 +5,7 @@ pub enum Error {
     EndBracesAdvanceCorruption
 }
 
-pub fn error(error: Error, line: usize) {
-    println!("Error at line {1}: {0:?}\n\n", error, line);
+pub fn error(error: Error, line: usize, chars: char) {
+    println!("Error at line {1}: {0:?}\nChar: {2}\n\n", error, line, chars);
     panic!("{:?}", error)
 }

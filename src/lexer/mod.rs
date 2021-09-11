@@ -64,9 +64,11 @@ impl Lexer {
             return Token::EMBreak;
         }
         match self.charlist[self.cursor] {
+			'\r' => {self.advance(); return Token::NewLine},
+            '\t' => {let token = Token::Whitespace; self.advance(); return token;},
             ';' => {let token = Token::Semicolon(self.charlist[self.cursor]); self.advance(); return token;}
             '{' => {self.advance(); self.make_args()},
-            '}' => {error(Error::EndBracesAdvanceCorruption, self.line); return Token::Fault("".to_string(), "".to_string());},
+            '}' => {self.advance(); return Token::RBraces},
             '-' => {let token = Token::Minus(self.charlist[self.cursor]); self.advance(); return token;},
             '>' => {let token = Token::Arer(self.charlist[self.cursor].to_string()); self.advance(); return token;},
             '<' => {let token = Token::Arer(self.charlist[self.cursor].to_string()); self.advance(); return token;},
@@ -74,13 +76,14 @@ impl Lexer {
             '=' => {let token = Token::Equals(self.charlist[self.cursor]); self.advance(); return token;},
             '(' => {self.advance(); self.make_function()},
             ')' => {let token = Token::Parenth(self.charlist[self.cursor]); self.advance(); return token;},
+            '|' => {let token = Token::Pipe(self.charlist[self.cursor]); self.advance(); return token;},
             '"' => {self.advance(); self.make_string()},
             '0'..'9' => self.make_number(),
             '9' => self.make_number(),
             'a'..'z' => self.make_keyword(),
             'z' => self.make_keyword(),
             ' ' => {self.advance(); Token::Whitespace},
-            _ => {error(Error::UnknownChar, self.line); return Token::Fault(String::from(""), String::from(""))},
+            _ => {error(Error::UnknownChar, self.line, self.charlist[self.cursor]); return Token::Fault(String::from(""), String::from(""))},
         }
     }
 
