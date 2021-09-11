@@ -1,4 +1,4 @@
-<img align="center" src="assets/logo-readme.svg">
+<img align="center" src="assets/logo-readme.png">
 
 <h1 align="center">tictac</h1>
 
