@@ -2,7 +2,6 @@ use crate::debug;
 use crate::types::token::Token;
 use crate::types::EString;
 use crate::types::token::Keyword;
-use std::env::args;
 use std::mem::discriminant;
 use crate::errors::Error;
 use crate::errors::error;
@@ -114,15 +113,17 @@ impl Lexer {
                 ' ' => {self.advance()}
                 _ => {
                     raw_args.push(self.matcher());
-                    self.advance();
+                    // self.advance();
                 },
             };
         }
 
         // workaround for a advance bug that goes too far in the variables depth
+        /*
         if self.charlist[self.cursor - 1] == '}' && self.charlist[self.cursor - 2] == '}' {
             self.unadvance();
         }
+        */
 
         for i in raw_args {
             match i {
