@@ -5,6 +5,7 @@ use crate::types::token::Keyword;
 use std::mem::discriminant;
 use crate::errors::Error;
 use crate::errors::error;
+use crate::types::token::Types;
 
 pub fn lex(string: EString) -> Vec<Vec<Token>> {
     let mut lex_inst = Lexer {
@@ -67,7 +68,8 @@ impl Lexer {
 			'\r' => {self.advance(); return Token::NewLine},
             '\t' => {let token = Token::Whitespace; self.advance(); return token;},
             ';' => {let token = Token::Semicolon(self.charlist[self.cursor]); self.advance(); return token;}
-            '{' => {self.advance(); self.make_args()},
+            ':' => {self.advance(); return Token::Colon;}
+			'{' => {self.advance(); self.make_args()},
             '}' => {self.advance(); return Token::RBraces},
             '-' => {let token = Token::Minus(self.charlist[self.cursor]); self.advance(); return token;},
             '>' => {let token = Token::Arer(self.charlist[self.cursor].to_string()); self.advance(); return token;},
@@ -201,6 +203,7 @@ impl Lexer {
                     "maybe" => patched_list.push(Token::Keyword(Keyword::Maybe)),
                     "exports" => patched_list.push(Token::Keyword(Keyword::Exports)),
                     "this" => patched_list.push(Token::Keyword(Keyword::This)),
+					"int" => patched_list.push(Token::Type(Types::Int)),
                     _ => {
                         patched_list.push(Token::SomeName(String::from(keyword)))
                     }

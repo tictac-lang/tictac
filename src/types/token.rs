@@ -11,6 +11,7 @@ pub enum Token {
     Pipe(char),
     Braces(EArrayToken),
     RBraces,
+    Colon,
     Comma,
     String(String),
     Int(String),
@@ -20,6 +21,7 @@ pub enum Token {
     FunctionDefinition(String),
     FunctionCall(String),
     SomethingFunction(String),
+    Type(Types),
     NewLine,
     SpecialNL,
     Whitespace,
@@ -32,4 +34,11 @@ pub enum Keyword {
     Maybe,
     Exports,
     This
+}
+
+#[derive(Debug, Clone)]
+pub enum Types {
+    Int,
+    String,
+    InternalStringArray
 }
