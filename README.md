@@ -42,4 +42,4 @@ We have an error table showing all the current possible errors at the time of wr
 | ------------------ | ----------------------------------------------------------------------------- |
 | `NoSemicolon`      | Has no semicolon.                                                             |
 | `UnknownChar`      | Found a character that the lexer doesn't know.                                |
-| `EndBracseAdvance` | Either placed and unmatcher brace, corrupted memory or error in my dumb code. |
+| `EndBracesAdvance` | Either placed and unmatcher brace, corrupted memory or error in my dumb code. |
